@@ -1,0 +1,3 @@
+package com.academiaflora;
+import org.springframework.context.annotation.*;import org.springframework.boot.CommandLineRunner;import java.time.*;
+@Configuration class DataSeed{@Bean CommandLineRunner seed(UserRepo u,AssignmentRepo a){return x->{if(u.count()==0){u.save(new User("Faculty","faculty@college.edu","Faculty@123","FACULTY"));u.save(new User("Student","student@college.edu","Student@123","STUDENT"));}if(a.count()==0){a.save(new Assignment("Data Structures - Binary Search Trees","Implement insertion, deletion and traversal algorithms.",LocalDateTime.now().plusHours(5)));a.save(new Assignment("Database Systems - SQL Queries & Indexing","Write SQL queries and explain indexing concepts.",LocalDateTime.now().plusHours(20)));}};}}
