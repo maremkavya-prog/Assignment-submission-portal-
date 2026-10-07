@@ -5,10 +5,10 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name="users")
+@Table(name = "users")
 class User {
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
     String name, username, password, role;
@@ -26,7 +26,7 @@ class User {
 @Entity
 class Assignment {
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
     String title, description;
@@ -44,7 +44,7 @@ class Assignment {
 @Entity
 class Submission {
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
     Long assignmentId, studentId;
@@ -55,4 +55,8 @@ class Submission {
     String remarks;
 
     @Lob
-    @Json
+    @JsonIgnore
+    byte[] fileData;
+
+    public Submission() {}
+}
