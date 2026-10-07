@@ -2,7 +2,7 @@ import React,{useEffect,useMemo,useState} from 'react';
 import {createRoot} from 'react-dom/client';
 import './style.css';
 
-const API=((import.meta.env.VITE_API_URL||'http://localhost:8080').replace(/\/$/,'')+'/api');
+const API='https://assignment-submission-portal-5.onrender.com/api';
 
 async function api(path,opt={}){
   const r=await fetch(API+path,opt);
